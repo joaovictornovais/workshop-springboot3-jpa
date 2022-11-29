@@ -1,0 +1,34 @@
+package com.joao.course.entities;
+
+import java.io.Serializable;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+@Data
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@Entity
+@Table(name = "tb_category")
+public class Category implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
+	@EqualsAndHashCode.Include
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String name;
+	
+	public Category() {
+	}
+	public Category(Long id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
+	
+}
