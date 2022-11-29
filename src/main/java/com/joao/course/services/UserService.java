@@ -12,7 +12,7 @@ import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor
-public class UserServices {
+public class UserService {
 	private final UserRepository repository;
 	
 	public List<User> findAll(){
