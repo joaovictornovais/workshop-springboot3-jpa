@@ -6,7 +6,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.joao.course.entities.enums.OrderStatus;
 
 import jakarta.persistence.CascadeType;

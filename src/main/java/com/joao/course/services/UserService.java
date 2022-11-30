@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.joao.course.entities.User;
 import com.joao.course.repositories.UserRepository;
+import com.joao.course.services.exceptions.ResourceNotFoundException;
 
 import lombok.AllArgsConstructor;
 
@@ -21,7 +22,7 @@ public class UserService {
 	
 	public User findById(Long id) {
 		Optional<User> obj = repository.findById(id);
-		return obj.get();
+		return obj.orElseThrow(() -> new ResourceNotFoundException(id));
 	}
 	
 	public User insert(User obj) {
